@@ -5,7 +5,6 @@ const Footer = () => {
         backgroundColor: "#1f80e0",
         padding: "1rem",
         textAlign: "center",
-        marginTop: "2rem",
         fontSize: "0.9rem",
         color: "white",
       }}

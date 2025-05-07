@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
 import Card from "../../components/card";
 
 interface CharacterProps {
@@ -29,13 +27,6 @@ const Home = () => {
       });
   }, []);
 
-  if (loading)
-    return (
-      <p style={{ color: "red", textAlign: "center" }}>
-        Carregando personagens...
-      </p>
-    );
-    
   if (error)
     return <p style={{ color: "red", textAlign: "center" }}>{error}</p>;
 
@@ -43,12 +34,11 @@ const Home = () => {
     <div
       style={{ backgroundColor: "#040714", color: "white", minHeight: "100vh" }}
     >
-      <Header />
-
-      {/* {loading && (
+      {loading && (
         <p style={{ color: "red", textAlign: "center" }}>
           Carregando personagens...
-        </p>)} */}
+        </p>
+      )}
 
       <main style={{ padding: "2rem" }}>
         <div
@@ -70,7 +60,6 @@ const Home = () => {
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   );
 };
